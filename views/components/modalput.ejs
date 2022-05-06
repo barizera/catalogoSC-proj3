@@ -1,0 +1,37 @@
+<section class="modal-overlay" id="overlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h3>Atualizar Óculos</h3>
+      <a href="/" id="close-modal-put"><i class="bi bi-x"></i></a>
+    </div>
+    <div class="modal-body">
+      <form class="form-modal" action="/update/<%= oculosPut.id %>" method="post">
+        
+        <label for="name">Nome:</label>
+        <input class="input" type="text" name="name" value="<%= oculosPut.name %>" />
+
+        <label for="collor">Cor:</label>
+        <input
+          class="input"
+          type="text"
+          name="collor"
+          value="<%= oculosPut.collor %>"
+        />
+
+        <label for="lens_type">Lente:</label>
+        <input
+          class="input"
+          type="text"
+          name="lens_type"
+          value="<%= oculosPut.lens_type %>"
+        />
+
+        <label for="image">Imagem:</label>
+        <input class="input" type="text" name="image" value="<%= oculosPut.image %>" />
+
+      
+        <button type="submit" >Atualizar</button>
+      </form>
+    </div>
+  </div>
+</section>

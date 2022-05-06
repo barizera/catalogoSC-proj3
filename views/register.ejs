@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./components/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./components/header.ejs') %> <% if (message != "") { %>
+    <%-include('./components/alerts.ejs') %> <% } %>
+    <main id="main_register">
+      <h2>Cadastre um novo óculos.</h2>
+      <div id="container_form">
+        <form id="form" method="post" action="/register">
+          <fieldset id="container_fieldset">
+            <fieldset class="fieldset">
+              <label for="name">Nome:</label>
+              <input
+                class="input"
+                type="text"
+                name="name"
+                placeholder="digite o nome do óculos..."
+              />
+            </fieldset>
+            <fieldset class="fieldset">
+              <label for="collor">Cor:</label>
+              <input
+                class="input"
+                type="text"
+                name="collor"
+                placeholder="digite a cor do óculos..."
+              />
+            </fieldset>
+            <fieldset class="fieldset">
+              <label for="lens_type">Lente:</label>
+              <input
+                class="input"
+                type="text"
+                name="lens_type"
+                placeholder="digite o tipo da lente do óculos..."
+              />
+            </fieldset>
+            <fieldset class="fieldset">
+              <label for="image">Imagem:</label>
+              <input
+                class="input"
+                type="url"
+                name="image"
+                placeholder="digite a url da imagem..."
+              />
+            </fieldset>
+          </fieldset>
+          <div id="container_button_register">
+            <button id="button_register">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('./components/footer.ejs') %>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

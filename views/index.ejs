@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <%- include('./components/head') %>
+  </head>
+
+  <body>
+    <%- include('./components/header.ejs') %> <% if (message != "") { %>
+    <%-include('./components/alerts.ejs') %> <% } %>
+    <main>
+      <section id="apresentação">
+        <h1>Aqui nosso <span id="conceito">conceito</span> é o seu!</h1>
+        <img
+          id="logo_catalogo_principal"
+          src="/img/logo 200x200.png"
+          alt="Logo Santo Conceito Store"
+        />
+      </section>
+      <p>Abaixo, nossos modelos disponíveis.</p>
+      <div id="container_divcards">
+        <div class="cards">
+          <% modelos_oculos.forEach((oculos) => { %>
+          <section class="all_cards">
+            <a id="details" href="/getById/<%= oculos.id%>/details">
+              <img class="oculos_image" src="<%= oculos.image %>" alt="<%= oculos.name%>" />
+            </a>
+            <h2>Óculos <%= oculos.name %></h2>
+            <div>
+              <a id="edit" href="/getById/<%= oculos.id %>/put">Editar</a>
+              <a id="delete" href="/getById/<%= oculos.id%>/delete">Apagar</a>
+            </div>
+          </section>
+          <% }) %>
+        </div>
+      </div>
+    </main>
+    <section>
+      <% if (oculosPut != null) { %> <%- include('./components/modalPut.ejs') %> <% } %>
+    </section>
+    <section>
+      <% if (oculosDel != null) { %> <%-include('./components/modalDel.ejs') %> <% } %>
+    </section>
+    <section>
+      <% if (oculosDetails != null) { %> <%- include('./components/details.ejs') %> <% } %>
+    </section>
+    <%- include('./components/footer.ejs') %>
+    <script src="/script.js"></script>
+  </body>
+</html>
