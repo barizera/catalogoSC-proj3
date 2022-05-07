@@ -35,3 +35,9 @@ export const models = connection.define(
     updatedAt: false,
   },
 );
+
+const initTable = async () => {
+  await models.sync()
+}
+
+initTable()
