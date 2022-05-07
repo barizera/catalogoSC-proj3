@@ -4,24 +4,24 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const connection = new Sequelize (
-
-    'postgres://scstore_user:puXH4NqbQJf9h4FxIUdQJVkvCT51KSGn@dpg-c9qt3cn5f999i81rp0ug-a/scstore',
+  process.env.DB_BASE,
+    process.env.DB_USER,
+    process.env.DB_PASS,
     {
-        dialect: 'postgres',
-        dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false
-            }
-        }
+        host: process.env.DB_HOST,
+        port: 5432,
+        dialect: "postgres",
     }
-)   
-    // process.env.DB_BASE,
-    // process.env.DB_USER,
-    // process.env.DB_PASS,
+    // 'postgres://scstore_user:puXH4NqbQJf9h4FxIUdQJVkvCT51KSGn@dpg-c9qt3cn5f999i81rp0ug-a/scstore',
     // {
-    //     host: process.env.DB_HOST,
-    //     port: 5432,
-    //     dialect: "postgres",
+    //     dialect: 'postgres',
+    //     dialectOptions: {
+    //         ssl: {
+    //             require: true,
+    //             rejectUnauthorized: false
+    //         }
+    //     }
     // }
+)   
+  
     
