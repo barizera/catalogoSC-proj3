@@ -38,7 +38,7 @@ export const create = async (req, res) => {
   try {
     const oculos = req.body;
 
-    if (!oculos.name || !oculos.collor || !oculos.lens_type || !oculos.image) {
+     if (!oculos.name || !oculos.collor || !oculos.lens_type || !oculos.image) {
       message = "Preencha todos os campos para poder cadastrar!";
       type = "danger";
       return res.redirect("/register");
